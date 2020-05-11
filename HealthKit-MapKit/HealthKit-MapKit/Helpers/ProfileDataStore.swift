@@ -13,9 +13,9 @@ class ProfileDataStore {
     class func getAgeSexAndBloodType() throws -> (age: Int,
                                                   biologicalSex: HKBiologicalSex,
                                                   bloodType: HKBloodType) {
-        
-      let healthKitStore = HKHealthStore()
-        
+                                                    
+        let healthKitStore = HKHealthStore()
+                                                   
       do {
 
         //1. This method throws an error if these data are not available.
@@ -72,6 +72,27 @@ class ProfileDataStore {
       }
      
     HKHealthStore().execute(sampleQuery)
+    }
+    
+    class func getTodaysSteps(completion: @escaping (Double) -> Void) {
+        
+        let healthKitStore = HKHealthStore()
+        let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+
+        let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
+            guard let result = result, let sum = result.sumQuantity() else {
+                completion(0.0)
+                return
+            }
+            completion(sum.doubleValue(for: HKUnit.count()))
+            print(result)
+        }
+
+        healthKitStore.execute(query)
     }
     
     class func saveBodyMassIndexSample(bodyMassIndex: Double, date: Date) {
