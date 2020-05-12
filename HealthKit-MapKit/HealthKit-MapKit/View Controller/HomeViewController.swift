@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+import MapKit
 
 class HomeViewController: UIViewController {
     
@@ -167,13 +168,13 @@ class HomeViewController: UIViewController {
     
     func buildUI() {
         buildTopView()
+        buildBottomView()
     }
     
     func buildTopView() {
         
-        let healthKitDataView = UIView()
+        let healthKitDataView = ARGradientView()
         self.healthDataView = healthKitDataView
-        healthKitDataView.backgroundColor = #colorLiteral(red: 0.7397366762, green: 0.605823338, blue: 0.4384545088, alpha: 1)
         healthKitDataView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(healthKitDataView)
@@ -181,7 +182,7 @@ class HomeViewController: UIViewController {
         healthKitDataView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0).isActive = true
         healthKitDataView.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: 0).isActive = true
         healthKitDataView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 0).isActive = true
-        healthKitDataView.heightAnchor.constraint(equalToConstant: view.frame.height/2).isActive = true
+        healthKitDataView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.45).isActive = true
         
         // add labels for pedometer
         
@@ -296,6 +297,34 @@ class HomeViewController: UIViewController {
         healthDataStackView.leadingAnchor.constraint(equalTo: healthKitDataView.leadingAnchor, constant: 30).isActive = true
         healthDataStackView.trailingAnchor.constraint(equalTo: healthKitDataView.trailingAnchor, constant: -30).isActive = true
         healthDataStackView.bottomAnchor.constraint(equalTo: healthKitDataView.bottomAnchor, constant: -30).isActive = true
+        
+    }
+    
+    func buildBottomView() {
+        
+        let mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mapView)
+        
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: healthDataView.bottomAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        let customBotttomButtonView = ARCustomBottomButtomView()
+        customBotttomButtonView.translatesAutoresizingMaskIntoConstraints = false
+        customBotttomButtonView.backgroundColor = .clear
+        view.addSubview(customBotttomButtonView)
+        view.bringSubviewToFront(customBotttomButtonView)
+        
+        customBotttomButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        customBotttomButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        customBotttomButtonView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        customBotttomButtonView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.15).isActive = true
+        
+        
+        print(customBotttomButtonView.self)
         
     }
 }

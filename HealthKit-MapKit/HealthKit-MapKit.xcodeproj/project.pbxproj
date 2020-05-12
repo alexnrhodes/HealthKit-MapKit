@@ -21,6 +21,10 @@
 		384ED4D3245F8483000B03CD /* DistanceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384ED4D2245F8483000B03CD /* DistanceWorkout.swift */; };
 		384ED4D5245F84C4000B03CD /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384ED4D4245F84C4000B03CD /* WorkoutSession.swift */; };
 		384ED4D92460FC31000B03CD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384ED4D82460FC31000B03CD /* HealthKit.framework */; };
+		3856D58C246A083C005995E3 /* ARAnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856D58B246A083C005995E3 /* ARAnimatedButton.swift */; };
+		3856D58E246A08A7005995E3 /* ARCustomBottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856D58D246A08A7005995E3 /* ARCustomBottomButtonView.swift */; };
+		38B6B722246A43EA0092A605 /* ARGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6B721246A43EA0092A605 /* ARGradientView.swift */; };
+		38B6B724246A449C0092A605 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6B723246A449C0092A605 /* UIColorExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		384ED4D4245F84C4000B03CD /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		384ED4D62460FC31000B03CD /* HealthKit-MapKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HealthKit-MapKit.entitlements"; sourceTree = "<group>"; };
 		384ED4D82460FC31000B03CD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		3856D58B246A083C005995E3 /* ARAnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAnimatedButton.swift; sourceTree = "<group>"; };
+		3856D58D246A08A7005995E3 /* ARCustomBottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCustomBottomButtonView.swift; sourceTree = "<group>"; };
+		38B6B721246A43EA0092A605 /* ARGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGradientView.swift; sourceTree = "<group>"; };
+		38B6B723246A449C0092A605 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 				384ED4CB245F82D2000B03CD /* Helpers */,
 				384ED4C6245F8280000B03CD /* Models */,
 				384ED4C5245F826B000B03CD /* View Controller */,
+				3856D58A246A0824005995E3 /* Custom Views */,
 				384ED4C3245F820D000B03CD /* Storyboards */,
 				384ED4C4245F823E000B03CD /* Resource */,
 			);
@@ -130,6 +139,7 @@
 				384ED4CC245F8380000B03CD /* HealthKitSetupAssistant.swift */,
 				384ED4CE245F83A3000B03CD /* ProfileDataStore.swift */,
 				384ED4D0245F8421000B03CD /* WorkoutDataStore.swift */,
+				38B6B723246A449C0092A605 /* UIColorExtention.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -140,6 +150,16 @@
 				384ED4D82460FC31000B03CD /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3856D58A246A0824005995E3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3856D58B246A083C005995E3 /* ARAnimatedButton.swift */,
+				3856D58D246A08A7005995E3 /* ARCustomBottomButtonView.swift */,
+				38B6B721246A43EA0092A605 /* ARGradientView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,12 +236,16 @@
 				384ED4CA245F82C4000B03CD /* HomeViewController.swift in Sources */,
 				384ED4C8245F82A5000B03CD /* UserHealthProfile.swift in Sources */,
 				384ED4A7245E6221000B03CD /* MapViewController.swift in Sources */,
+				3856D58E246A08A7005995E3 /* ARCustomBottomButtonView.swift in Sources */,
 				384ED4D1245F8421000B03CD /* WorkoutDataStore.swift in Sources */,
+				38B6B722246A43EA0092A605 /* ARGradientView.swift in Sources */,
 				384ED4CD245F8380000B03CD /* HealthKitSetupAssistant.swift in Sources */,
 				384ED4A3245E6221000B03CD /* AppDelegate.swift in Sources */,
+				3856D58C246A083C005995E3 /* ARAnimatedButton.swift in Sources */,
 				384ED4D5245F84C4000B03CD /* WorkoutSession.swift in Sources */,
 				384ED4CF245F83A3000B03CD /* ProfileDataStore.swift in Sources */,
 				384ED4D3245F8483000B03CD /* DistanceWorkout.swift in Sources */,
+				38B6B724246A449C0092A605 /* UIColorExtention.swift in Sources */,
 				384ED4A5245E6221000B03CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

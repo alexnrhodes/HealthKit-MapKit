@@ -10,11 +10,15 @@ import UIKit
 
 extension UIColor {
     
-  public class var graidentGray1: UIColor {
-        return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    public class var graidentGray1: UIColor {
+        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     public class var graidentGray2: UIColor {
-           return #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-       }
+        return #colorLiteral(red: 0.7741647363, green: 0.7695639729, blue: 0.7777020931, alpha: 1)
+    }
+    
+    public class var strokeGray: UIColor {
+        return #colorLiteral(red: 0.3691669106, green: 0.4010735452, blue: 0.4438050389, alpha: 0.7951359161)
+    }
 }
