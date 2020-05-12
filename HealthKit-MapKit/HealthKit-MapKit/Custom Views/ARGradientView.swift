@@ -54,7 +54,7 @@ class ARGradientView: UIView {
             context.addLine(to: corner4)
             
             context.setStrokeColor(UIColor.strokeGray.cgColor)
-            context.setLineWidth(2)
+            context.setLineWidth(1)
             context.strokePath()
             
             

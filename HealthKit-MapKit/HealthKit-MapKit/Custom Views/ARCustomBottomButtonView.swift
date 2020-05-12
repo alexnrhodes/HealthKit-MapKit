@@ -15,9 +15,10 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.graidentGray1
     @IBInspectable var endColor: UIColor = UIColor.graidentGray2
     @IBInspectable var strokeColor: UIColor = UIColor.strokeGray
+    @IBInspectable var startColorEllipse: UIColor = UIColor.graidentGreen1
+    @IBInspectable var endColorEllipse: UIColor = UIColor.graidentGreen2
     
-    
-    
+     
     override func draw(_ rect: CGRect) {
         
         if let context = UIGraphicsGetCurrentContext() {
@@ -75,13 +76,14 @@ import UIKit
             context.addLine(to: corner6)
             
             context.setStrokeColor(strokeColor.cgColor)
-            context.setLineWidth(2)
+            context.setLineWidth(1)
             context.strokePath()
             
             
             let buttonEllipse = CGRect(x: rect.size.width * 0.375, y: rect.size.height * 0.25, width: rect.size.width * 0.25, height: rect.size.height * 0.73)
 
             context.addEllipse(in: buttonEllipse)
+            context.clip()
 
             let colorSpaceEllipse = CGColorSpaceCreateDeviceRGB()
             
@@ -89,11 +91,12 @@ import UIKit
             let colorLocationsEllipse: [CGFloat] = [0.0, 1.0]
             
             // 3
-            let colorsEllipse: CFArray = [#colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.3890221715, blue: 0.08304802328, alpha: 1)] as CFArray
+            let colorsEllipse = [startColorEllipse.cgColor, endColorEllipse.cgColor]
             
             // 4
-            let gradientEllipse = CGGradient(colorsSpace: colorSpaceEllipse, colors: colorsEllipse, locations: colorLocationsEllipse)!
-            context.clip()
+            let gradientEllipse = CGGradient(colorsSpace: colorSpaceEllipse,
+            colors: colorsEllipse as CFArray,
+            locations: colorLocationsEllipse)!
             
             let startPointEllipse = CGPoint(x: 0, y: 0)
             let endPointEllipse = CGPoint(x: 0, y: buttonEllipse.height)
